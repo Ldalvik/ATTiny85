@@ -5,14 +5,15 @@ int main()
 	DDRB->DB0 = 1;
 	while (1)
 	{
-		// PORTB |= 0b00000001;
-		// PORTB |= 0x08;
+		// PORTB = 0x08;  // working
+		// PORTB |= 0x08; // not working
+		// PORTB ^= 0x08; // not working
+		// PORTB &= 0x08; // not working
 
 		PORTB->PB0 = 1;
-		delay(1000);
+		delay(50000);
 
 		PORTB->PB0 = 0;
-		delay(50000);
-		delay(50000);
+		delay(25000);
 	}
 }
