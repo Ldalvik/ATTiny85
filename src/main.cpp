@@ -2,18 +2,14 @@
 
 int main()
 {
-	DDRB->DB0 = 1;
+	GPIOPORT.DDRB.set(DDB0);
+
 	while (1)
 	{
-		// PORTB = 0x08;  // working
-		// PORTB |= 0x08; // not working
-		// PORTB ^= 0x08; // not working
-		// PORTB &= 0x08; // not working
-
-		PORTB->PB0 = 1;
+		GPIOPORT.PORTB.set(PB0, PB1);
 		delay(50000);
 
-		PORTB->PB0 = 0;
+		GPIOPORT.PORTB.set(PB0);
 		delay(25000);
 	}
 }
