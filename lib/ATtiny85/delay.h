@@ -94,7 +94,9 @@
 
 // This delay function takes up a lot space in flash, but
 // inlining it brings it down to ~64 bytes per use.
-inline static void delay(volatile long delayTime)
+// No need to inline if you're using it a lot
+inline 
+static void delay(volatile long delayTime)
 {
     volatile long d = delayTime;
     for (; d > 0; d--){}
