@@ -6,13 +6,28 @@ struct Register
 {
 private:
     inline static volatile uint8_t *reg = reinterpret_cast<volatile uint8_t *>(address + (SFR ? 0x20 : 0x0));
+
 public:
+    /* Sets all bits to 0 */
+    void clear()
+    {
+        *reg = 0x0;
+    }
+
+    /* Sets all bits to 1 */
+    void set()
+    {
+        *reg = 0xFF;
+    }
+
+    /* Set 1 or multiple bits at a time. */
     template <typename... Bits>
     void set(Bits... bits)
     {
         ((*reg |= (1 << bits)), ...);
     }
 
+    /* Clear 1 or multiple bits at a time. */
     template <typename... Bits>
     void clear(Bits... bits)
     {
@@ -20,52 +35,9 @@ public:
     }
 };
 
-// #define USICR _SFR_IO8(0x0D)
-// #define USISIE 7
-// #define USIOIE 6
-// #define USIWM1 5
-// #define USIWM0 4
-// #define USICS1 3
-// #define USICS0 2
-// #define USICLK 1
-// #define USITC 0
-
-// #define USISR _SFR_IO8(0x0E)
-// #define USISIF 7
-// #define USIOIF 6
-// #define USIPF 5
-// #define USIDC 4
-// #define USICNT3 3
-// #define USICNT2 2
-// #define USICNT1 1
-// #define USICNT0 0
-
-// #define USIDR _SFR_IO8(0x0F)
-// #define USIBR _SFR_IO8(0x10)
-
 // #define GPIOR0 _SFR_IO8(0x11)
 // #define GPIOR1 _SFR_IO8(0x12)
 // #define GPIOR2 _SFR_IO8(0x13)
-
-// #define DIDR0 _SFR_IO8(0x14)
-// #define ADC0D 5
-// #define ADC2D 4
-// #define ADC3D 3
-// #define ADC1D 2
-// #define AIN1D 1
-// #define AIN0D 0
-
-// #define PCMSK _SFR_IO8(0x15)
-// #define PCINT5 5
-// #define PCINT4 4
-// #define PCINT3 3
-// #define PCINT2 2
-// #define PCINT1 1
-// #define PCINT0 0
-
-// #define PINB _SFR_IO8(0x16)
-
-// /* Reserved [0x19..0x1B] */
 
 // /* EEPROM Control Register EECR */
 // #define EECR _SFR_IO8(0x1C)

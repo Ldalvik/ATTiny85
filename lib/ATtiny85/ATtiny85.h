@@ -1,9 +1,19 @@
 #pragma once
 #include "registers.h"
-#include "delay.h"
 #include "io.h"
+#include "adc.h"
+#include "delay.h"
 
 extern _GPIOPORT GPIOPORT;
+extern _ADC ADC;
+
+extern struct
+{
+    _GPIOPORT GPIOPORT;
+    _ADC ADC;
+} ATtiny85;
+
+
 // extern Register<DDRB_reg, 0x17> DDRB;
 // extern Register<PORTB_reg, 0x18> PORTB;
 // // extern Register<PINB_reg, 0x00> PINB;
