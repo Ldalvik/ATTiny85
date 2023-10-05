@@ -12,7 +12,7 @@
 #pragma once
 #include "registers.h"
 
-// USICR
+// USICR (USI Control Register)
 #define USISIE 7
 #define USIOIE 6
 #define USIWM1 5
@@ -22,7 +22,7 @@
 #define USICLK 1
 #define USITC  0
 
-// USISR
+// USISR (USI Status Register)
 #define USISIF 7
 #define USIOIF 6
 #define USIPF 5
@@ -34,8 +34,8 @@
 
 typedef struct
 {
-    Register<uint8_t, 0x0D> USICR;
-    Register<uint8_t, 0x0E> USISR;  
-    Register<uint8_t, 0x0F> USIDR;
-    Register<uint8_t, 0x10> USIBR;
+    Register<uint8_t, 0x0D> USICR; // USI Control Register
+    Register<uint8_t, 0x0E> USISR; // USI Status Register
+    Register<uint8_t, 0x0F> USIDR; // USI Data Register
+    Register<uint8_t, 0x10> USIBR; // USI Buffer Register
 } _SERIAL;

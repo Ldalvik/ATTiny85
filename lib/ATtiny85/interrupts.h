@@ -1,7 +1,7 @@
 #pragma once
 #include "registers.h"
 
-// PCMSK
+// PCMSK (Pin Change Mask Register)
 #define PCINT5 5
 #define PCINT4 4
 #define PCINT3 3
@@ -19,7 +19,7 @@
 
 typedef struct
 {
-    Register<uint8_t, 0x15> PCMSK;
-    Register<uint8_t, 0x3A> GIFR;
-    Register<uint8_t, 0x3B> GIMSK;
+    Register<uint8_t, 0x15> PCMSK; // Pin Change Mask Register
+    Register<uint8_t, 0x3A> GIFR;  // General Interrupt Flag Register
+    Register<uint8_t, 0x3B> GIMSK; // General Interrupt Mask Register
 } _INTERRUPTS;

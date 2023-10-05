@@ -11,9 +11,9 @@
 
 typedef struct
 {
-    Register<uint8_t, 0x1C> EECR;  // EEPROM Control Register
-    Register<uint8_t, 0x1D> EEDR;  // EEPROM Data Register
-    Register<uint16_t, 0x1E> EEAR; // EEPROM Address Register
-    Register<uint8_t, 0x1E> EEARL; // EEPROM Address Register Low
-    Register<uint8_t, 0x1F> EEARH; // EEPROM Address Register High
+    Register<uint8_t,  0x1C> EECR;  // EEPROM Control Register
+    Register<uint8_t,  0x1D> EEDR;  // EEPROM Data Register
+    Register<uint16_t, 0x1E> EEAR;  // EEPROM Address Register
+    Register<uint8_t,  0x1E> EEARL; // EEPROM Address Register Low
+    Register<uint8_t,  0x1F> EEARH; // EEPROM Address Register High
 } _EEPROM;
