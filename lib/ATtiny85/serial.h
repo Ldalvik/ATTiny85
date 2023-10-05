@@ -34,8 +34,8 @@
 
 typedef struct
 {
-    Register<0x0D> USICR;
-    Register<0x0E> USISR;  
-    Register<0x0F> USIDR;
-    Register<0x10> USIBR;
-} _USI;
+    Register<uint8_t, 0x0D> USICR;
+    Register<uint8_t, 0x0E> USISR;  
+    Register<uint8_t, 0x0F> USIDR;
+    Register<uint8_t, 0x10> USIBR;
+} _SERIAL;

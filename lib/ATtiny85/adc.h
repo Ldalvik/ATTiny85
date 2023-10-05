@@ -50,9 +50,12 @@
 
 typedef struct
 {
-    Register<0> ADCSRB;
-    Register<0> ADCSRA;  
-    Register<0> ADMUX;
-    Register<0> ACSR;
-    Register<0x14> DIDR0;
+    Register<uint8_t,  0x03> ADCSRB;
+    Register<uint16_t, 0x04> ADCW;
+    Register<uint8_t,  0x04> ADCL;
+    Register<uint8_t,  0x05> ADCH;
+    Register<uint8_t,  0x06> ADCSRA;  
+    Register<uint8_t,  0x07> ADMUX;
+    Register<uint8_t,  0x08> ACSR;
+    Register<uint8_t,  0x14> DIDR0;
 } _ADC;
