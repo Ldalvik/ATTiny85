@@ -4,18 +4,17 @@
 template <typename Type, uint8_t address, bool SFR = true>
 struct Register
 {
-private:
-    inline static volatile Type *reg = reinterpret_cast<volatile Type *>(address + (SFR ? 0x20 : 0x0));
-
 public:
+    static constexpr volatile Type& reg = *reinterpret_cast<volatile Type*>(address);
+
     /* Sets all bits to 0 */
-    void clear()
+    void clearAll()
     {
         *reg = 0x0;
     }
 
     /* Sets all bits to 1 */
-    void set()
+    void setAll()
     {
         *reg = 0xFF;
     }

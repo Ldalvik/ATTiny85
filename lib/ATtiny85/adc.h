@@ -51,7 +51,7 @@
 typedef struct
 {
     Register<uint8_t,  0x03> ADCSRB; // ADC Control and Status Register B
-    Register<uint16_t, 0x04> ADCW;   // 
+    Register<uint16_t, 0x04> ADCW;   // ADC Data Register
     Register<uint8_t,  0x04> ADCL;   // ADC Data Register Low Byte
     Register<uint8_t,  0x05> ADCH;   // ADC Data Register High Byte
     Register<uint8_t,  0x06> ADCSRA; // ADC Control and Status Register A
