@@ -1,10 +1,12 @@
 #include "ATtiny85.h"
+#include "util/delay.h"
 
 int main()
 {
-	ATtiny85.GPIOPORT.DDRB.reg |= (1 << PB0);
+	SPI_Init();	
+
 	while (1)
 	{
-		
+		SPI_write(0x03);
 	}
 }

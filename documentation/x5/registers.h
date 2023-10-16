@@ -1,6 +1,8 @@
 #pragma once
 #include <stdint.h>
 
+#define sb(bit) (1 << bit)
+
 template <typename Type, uint8_t address, bool SFR = true>
 struct Register
 {
